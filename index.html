@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apartamenty Trzy Dęby | Terrano Development</title>
+  <meta name="description" content="Apartamenty Trzy Dęby — Szczejkowicka 13, Żory. Nowa strona w przygotowaniu. Inwestycję realizuje Terrano Development.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1e2a24">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="preload" as="image" href="assets/nad-stawem.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libertinus+Serif:ital,wght@0,400;0,600;1,400&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green-900: #1e2a24;
+      --green-800: #263a30;
+      --cream: #f6f1e7;
+      --cream-soft: rgba(246, 241, 231, .78);
+      --line: rgba(246, 241, 231, .22);
+      --serif: "Libertinus Serif", Georgia, serif;
+      --sans: Manrope, system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: var(--sans);
+      color: var(--cream);
+      background: var(--green-900);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+
+    .page {
+      position: relative;
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      isolation: isolate;
+      overflow: hidden;
+    }
+    .bg {
+      position: absolute; inset: 0; z-index: -2;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 60%;
+      animation: zoom 24s ease-out both;
+    }
+    .page::before {
+      content: ""; position: absolute; inset: 0; z-index: -1;
+      background:
+        linear-gradient(180deg, rgba(20,30,25,.55) 0%, rgba(20,30,25,.25) 35%, rgba(20,30,25,.55) 65%, rgba(20,30,25,.92) 100%);
+    }
+    @keyframes zoom { from { transform: scale(1.08); } to { transform: scale(1); } }
+
+    .hero {
+      flex: 1;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center;
+      padding: 48px 16px 32px;
+      animation: fade 1.2s .2s ease-out both;
+    }
+    @keyframes fade { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+    .logo { width: clamp(180px, 34vw, 300px); height: auto; filter: drop-shadow(0 4px 24px rgba(0,0,0,.35)); }
+    .badge {
+      margin-top: 32px;
+      font-size: 12px; letter-spacing: .24em; text-transform: uppercase; font-weight: 600;
+      padding: 9px 18px; border: 1px solid var(--line); border-radius: 999px;
+      background: rgba(20,30,25,.35); backdrop-filter: blur(6px);
+    }
+    .lead {
+      margin-top: 22px; max-width: 34ch;
+      font-family: var(--serif); font-size: clamp(22px, 3.2vw, 32px); line-height: 1.3;
+      text-wrap: balance;
+    }
+    .facts {
+      margin-top: 28px;
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 28px;
+      font-size: 14px; color: var(--cream-soft);
+    }
+    .facts strong { color: var(--cream); font-weight: 600; }
+
+    .contact {
+      border-top: 1px solid var(--line);
+      background: rgba(20,30,25,.55); backdrop-filter: blur(10px);
+    }
+    .contact-inner {
+      max-width: 1120px; margin: 0 auto;
+      padding: 28px 16px;
+      display: grid; grid-template-columns: repeat(4, auto); justify-content: space-between; align-items: center; gap: 24px 40px;
+    }
+    .item .label {
+      display: block; font-size: 11px; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--cream-soft); margin-bottom: 6px;
+    }
+    .item .value { font-family: var(--serif); font-size: 20px; line-height: 1.3; }
+    .item a { text-decoration: none; border-bottom: 1px solid var(--line); transition: border-color .2s; }
+    .item a:hover, .item a:focus-visible { border-color: var(--cream); }
+    .dev { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .dev img.sygnet { height: 34px; width: auto; }
+    .dev img.word { height: 18px; width: auto; }
+
+    footer {
+      text-align: center; font-size: 12px; color: var(--cream-soft);
+      padding: 0 16px 20px;
+    }
+
+    @media (max-width: 860px) {
+      .contact-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 520px) {
+      .contact-inner { grid-template-columns: 1fr; text-align: center; justify-items: center; gap: 20px; }
+      .item .value { font-size: 18px; }
+      .badge { font-size: 11px; letter-spacing: .18em; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .bg, .hero { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <img class="bg" src="assets/nad-stawem.webp" alt="Apartamenty Trzy Dęby za drzewami, nad stawem">
+
+    <section class="hero">
+      <h1><img class="logo" src="assets/logo-white.svg" alt="Apartamenty Trzy Dęby"></h1>
+      <p class="badge">Strona w przygotowaniu</p>
+      <p class="lead">Nowoczesna architektura przy stawie, w&nbsp;zieleni parku krajobrazowego.</p>
+      <ul class="facts" role="list" style="list-style:none">
+        <li><strong>78</strong> mieszkań i apartamentów</li>
+        <li><strong>32–144 m²</strong></li>
+        <li>budynki <strong>A i B</strong></li>
+      </ul>
+    </section>
+
+    <section class="contact" aria-label="Kontakt">
+      <div class="contact-inner">
+        <div class="item">
+          <span class="label">Adres inwestycji</span>
+          <span class="value">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Szczejkowicka+13,+%C5%BBory" target="_blank" rel="noopener">Szczejkowicka 13, Żory</a>
+          </span>
+        </div>
+        <div class="item">
+          <span class="label">E-mail</span>
+          <span class="value"><a href="mailto:kontakt@terrano-development.pl">kontakt@terrano-development.pl</a></span>
+        </div>
+        <!-- Telefon: odkomentuj i uzupełnij właściwy numer
+        <div class="item">
+          <span class="label">Telefon</span>
+          <span class="value"><a href="tel:+48000000000">+48 000 000 000</a></span>
+        </div>
+        -->
+        <div class="item">
+          <span class="label">Deweloper</span>
+          <span class="dev" aria-label="Terrano Development">
+            <img class="sygnet" src="assets/terrano-sygnet-white.svg" alt="">
+            <img class="word" src="assets/terrano-wordmark-white.svg" alt="Terrano Development">
+          </span>
+        </div>
+        <div class="item">
+          <span class="label">Inwestycja</span>
+          <span class="value">Apartamenty Trzy Dęby</span>
+        </div>
+      </div>
+      <footer>© 2026 Terrano Development · Wizualizacje mają charakter poglądowy.</footer>
+    </section>
+  </main>
+</body>
+</html>
